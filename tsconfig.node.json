@@ -6,7 +6,9 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "moduleResolution": "bundler",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "removeComments": true,
+    "strictNullChecks": true,
   },
   "include": ["vite.config.ts"]
 }
