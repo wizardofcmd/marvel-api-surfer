@@ -11,6 +11,9 @@ function App() {
       </div>
 
       <div className="flex justify-center">
+        {/* TODO: Use Material UI to import custom stylized components */}
+        {/* TODO: Make entire app responsive on all screens */}
+        {/* TODO: Implement Formik for search input */}
         <form className="flex justify-center w-full">
           <select
             className="appearance-none flex-initial lg:w-40 lg:h-10 px-1 mr-1
@@ -39,7 +42,10 @@ function App() {
             id="submit-btn"
             aria-label="Search button"
           >
-            <img className="col-" src={SearchIcon} alt="Magnifying Glass Search Icon" />
+            <img
+              src={SearchIcon}
+              alt="Magnifying Glass Search Icon"
+            />
           </button>
         </form>
       </div>
