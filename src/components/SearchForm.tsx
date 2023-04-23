@@ -1,5 +1,5 @@
 import SearchIcon from "../assets/search.svg";
-import { AppProps } from "../types/Types";
+import { SearchFormProps } from "../types/Types";
 
 export default function SearchForm({
   category,
@@ -7,7 +7,7 @@ export default function SearchForm({
   handleSelectChange,
   handleUserInput,
   handleSearch,
-}: AppProps) {
+}: SearchFormProps) {
   return (
     <div className="flex justify-center">
       <form onSubmit={handleSearch} className="flex w-full justify-center">
@@ -29,7 +29,7 @@ export default function SearchForm({
           <option value="stories">Stories</option>
         </select>
         <input
-          className="appearance-none border-2 border-r-0 border-slate-200 px-1 focus:outline-none h-10 w-1/4"
+          className="h-10 w-1/4 appearance-none border-2 border-r-0 border-slate-200 px-1 focus:outline-none"
           type="search"
           placeholder="Search"
           id="search-input"

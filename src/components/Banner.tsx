@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { BannerProps } from "../types/Types";
 import SearchForm from "./SearchForm";
 import { fetchResults } from "../api/Request";
 
-export default function Banner() {
+export default function Banner({ setResults }: BannerProps) {
   const [query, setQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("characters");
 
@@ -16,11 +17,12 @@ export default function Banner() {
     setSelectedCategory(category);
   }
 
-  function handleSearch(event: React.SyntheticEvent) {
+  async function handleSearch(event: React.SyntheticEvent) {
     event.preventDefault();
     if (!query) return;
 
-    fetchResults(selectedCategory, query);
+    const results = fetchResults(selectedCategory, query);
+    setResults(await results);
   }
 
   return (

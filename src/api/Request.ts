@@ -8,7 +8,7 @@ export async function fetchResults(category: string, query: string) {
       `${API_URL}${category}?nameStartsWith=${query}&apikey=${pub_key}`
     );
     const json = await response.json();
-    return json.items || [];
+    return json || [];
   } catch (error: unknown) {
     throw new Error(`${error}`);
   }
