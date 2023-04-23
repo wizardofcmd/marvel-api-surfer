@@ -5,12 +5,12 @@ export default function SearchForm({ onSearchInput }: AppProps) {
   return (
     <form
       onSubmit={(e) => e.preventDefault()}
-      className="flex justify-center w-full"
+      className="flex w-full justify-center"
     >
       <select
-        className="appearance-none flex-initial w-40 h-10 px-1 mr-1
-  border border-slate-200 rounded bg-white focus:outline-none
-  bg-[url('./assets/down-chevron.svg')] bg-right bg-origin-padding bg-no-repeat"
+        className="mr-1 h-10 w-40 flex-initial appearance-none rounded
+  border border-slate-200 bg-white bg-[url('./assets/down-chevron.svg')] bg-right
+  bg-no-repeat bg-origin-padding px-1 focus:outline-none"
         defaultValue="Characters"
         name="category"
         id="category"
@@ -24,7 +24,7 @@ export default function SearchForm({ onSearchInput }: AppProps) {
         <option value="stories">Stories</option>
       </select>
       <input
-        className="appearance-none px-1 focus:outline-none border border-slate-200 lg:h-10 lg:w-1/4"
+        className="appearance-none border border-slate-200 px-1 focus:outline-none lg:h-10 lg:w-1/4"
         type="search"
         placeholder="Search"
         id="search-input"
@@ -32,7 +32,7 @@ export default function SearchForm({ onSearchInput }: AppProps) {
         onChange={onSearchInput}
       />
       <button
-        className="bg-sky-400 w-10 lg:h-10 flex-initial p-2"
+        className="w-10 flex-initial bg-sky-400 p-2 lg:h-10"
         type="submit"
         id="submit-btn"
         aria-label="Search button"
