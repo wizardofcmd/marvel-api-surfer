@@ -18,11 +18,16 @@ function App() {
 
   function handleSearch(event: React.SyntheticEvent) {
     event.preventDefault();
+    if (!query) return;
+
     fetchResults(selectedCategory, query);
   }
 
   return (
-    <div className="flex h-screen w-screen flex-col gap-4" role="main">
+    <div
+      className="flex h-screen w-screen flex-col gap-4 font-lato"
+      role="main"
+    >
       <div className="flex flex-col items-center pt-1">
         <h1 className="text-5xl font-bold">Marvel Comics Search Tool</h1>
         <p className="text-neutral-500">
@@ -31,10 +36,6 @@ function App() {
       </div>
 
       <div className="flex justify-center">
-        {/* TODO: Use Material UI to import custom stylized components */}
-        {/* TODO: Make entire app responsive on all screens */}
-        {/* TODO: Implement Formik for forms */}
-        {/* TODO: Add more endpoints to search by */}
         <SearchForm
           category={selectedCategory}
           value={query}

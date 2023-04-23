@@ -1,8 +1,3 @@
 @tailwind base;
-@layer base {
-  body {
-    @apply font-lato;
-  }
-}
 @tailwind components;
 @tailwind utilities;

@@ -11,8 +11,8 @@ export default function SearchForm({
   return (
     <form onSubmit={handleSearch} className="flex w-full justify-center">
       <select
-        className="mr-1 h-10 w-40 flex-initial appearance-none rounded
-  border border-slate-200 bg-white bg-[url('./assets/down-chevron.svg')] bg-right
+        className="mr-1 h-10 w-40 flex-initial appearance-none
+  border-2 border-slate-200 bg-white bg-[url('./assets/down-chevron.svg')] bg-right
   bg-no-repeat bg-origin-padding px-1 focus:outline-none"
         value={category}
         onChange={handleSelectChange}
@@ -28,7 +28,7 @@ export default function SearchForm({
         <option value="stories">Stories</option>
       </select>
       <input
-        className="appearance-none border border-slate-200 px-1 focus:outline-none lg:h-10 lg:w-1/4"
+        className="appearance-none border-2 border-r-0 border-slate-200 px-1 focus:outline-none lg:h-10 lg:w-1/4"
         type="search"
         placeholder="Search"
         id="search-input"
