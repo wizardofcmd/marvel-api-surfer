@@ -3,10 +3,20 @@ import SearchForm from "./components/SearchForm";
 
 function App() {
   const [query, setQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("characters");
 
   function handleUserInput(event: React.ChangeEvent<HTMLInputElement>) {
     const target = event.target.value;
     setQuery(target);
+  }
+
+  function handleSelectChange(event: React.ChangeEvent<HTMLSelectElement>) {
+    const category = event.target.value;
+    setSelectedCategory(category);
+  }
+
+  function handleSearch(event: React.SyntheticEvent) {
+    event.preventDefault();
   }
 
   return (
@@ -22,7 +32,13 @@ function App() {
         {/* TODO: Use Material UI to import custom stylized components */}
         {/* TODO: Make entire app responsive on all screens */}
         {/* TODO: Implement Formik for search input */}
-        <SearchForm value={query} onSearchInput={handleUserInput} />
+        <SearchForm
+          category={selectedCategory}
+          value={query}
+          handleSearch={handleSearch}
+          handleUserInput={handleUserInput}
+          handleSelectChange={handleSelectChange}
+        />
       </div>
     </div>
   );

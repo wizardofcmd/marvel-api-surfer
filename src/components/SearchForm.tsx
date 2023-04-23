@@ -1,17 +1,21 @@
 import SearchIcon from "../assets/search.svg";
 import { AppProps } from "../types/Types";
 
-export default function SearchForm({ onSearchInput }: AppProps) {
+export default function SearchForm({
+  category,
+  value,
+  handleSelectChange,
+  handleUserInput,
+  handleSearch,
+}: AppProps) {
   return (
-    <form
-      onSubmit={(e) => e.preventDefault()}
-      className="flex w-full justify-center"
-    >
+    <form onSubmit={handleSearch} className="flex w-full justify-center">
       <select
         className="mr-1 h-10 w-40 flex-initial appearance-none rounded
   border border-slate-200 bg-white bg-[url('./assets/down-chevron.svg')] bg-right
   bg-no-repeat bg-origin-padding px-1 focus:outline-none"
-        defaultValue="Characters"
+        value={category}
+        onChange={handleSelectChange}
         name="category"
         id="category"
         aria-label="Dropdown menu for selecting categories to search by"
@@ -29,10 +33,11 @@ export default function SearchForm({ onSearchInput }: AppProps) {
         placeholder="Search"
         id="search-input"
         aria-label="Search input"
-        onChange={onSearchInput}
+        value={value}
+        onChange={handleUserInput}
       />
       <button
-        className="w-10 flex-initial bg-sky-400 p-2 lg:h-10"
+        className="w-10 flex-initial bg-sky-400 p-2 hover:bg-sky-500 lg:h-10"
         type="submit"
         id="submit-btn"
         aria-label="Search button"
