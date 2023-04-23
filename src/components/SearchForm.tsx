@@ -33,6 +33,7 @@ export default function SearchForm({
         placeholder="Search"
         id="search-input"
         aria-label="Search input"
+        autoComplete="off"
         value={value}
         onChange={handleUserInput}
       />

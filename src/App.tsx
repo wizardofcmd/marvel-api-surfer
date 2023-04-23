@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { fetchResults } from "./api/Request";
 import SearchForm from "./components/SearchForm";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
 
   function handleSearch(event: React.SyntheticEvent) {
     event.preventDefault();
+    fetchResults(selectedCategory, query);
   }
 
   return (
@@ -31,7 +33,8 @@ function App() {
       <div className="flex justify-center">
         {/* TODO: Use Material UI to import custom stylized components */}
         {/* TODO: Make entire app responsive on all screens */}
-        {/* TODO: Implement Formik for search input */}
+        {/* TODO: Implement Formik for forms */}
+        {/* TODO: Add more endpoints to search by */}
         <SearchForm
           category={selectedCategory}
           value={query}
