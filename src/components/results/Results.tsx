@@ -1,5 +1,12 @@
 import { ResultsProps } from "../../types/Types";
+import { filterResults } from "../../utils/Utils";
 
 export default function Results({ results }: ResultsProps) {
-  return <div></div>;
+  filterResults(results);
+
+  return (
+    <div className="flex">
+      <div></div>
+    </div>
+  );
 }

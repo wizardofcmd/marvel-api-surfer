@@ -26,10 +26,7 @@ export default function Banner({ setResults }: BannerProps) {
   }
 
   return (
-    <div
-      className="flex h-screen w-screen flex-col gap-4 font-lato"
-      role="banner"
-    >
+    <div className="flex flex-col gap-4 font-lato" role="banner">
       <div className="flex flex-col items-center pt-1">
         <h1 className="text-5xl font-bold">Marvel Comics Search Tool</h1>
         <p className="text-neutral-500">
