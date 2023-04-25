@@ -6,6 +6,8 @@ export function filterResults(response: Object) {
   const data = root.data as Data;
   const results = data.results;
 
+  if (results.length < 1) return []; 
+
   const filteredResults = results.map(
     ({ name, description, thumbnail, urls }) => {
       const detail = urls.find((url) => url.type === "detail")?.url ?? "";

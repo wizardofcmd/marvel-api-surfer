@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Banner setResults={setResults} />
-      {Object.keys(results).length > 0 && <Results results={results} />}
+      <Results results={results} />
     </>
   );
 }

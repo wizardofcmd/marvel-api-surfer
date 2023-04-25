@@ -2,11 +2,17 @@ import { ResultsProps } from "../../types/Types";
 import { filterResults } from "../../utils/Utils";
 
 export default function Results({ results }: ResultsProps) {
-  filterResults(results);
+  if (Object.keys(results).length > 0) {
+    const filteredResults = filterResults(results);
+    
+    if(filteredResults.length < 1) return null;
 
-  return (
-    <div className="flex">
-      <div></div>
-    </div>
-  );
+    return (
+      <div className="flex">
+        <div></div>
+      </div>
+    );
+  }
+
+  return null;
 }
