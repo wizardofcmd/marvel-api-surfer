@@ -13,3 +13,10 @@ export type SearchFormProps = {
 export type ResultsProps = {
   results: string[];
 };
+
+export type ResultProps = {
+  name: string;
+  description: string;
+  image: string;
+  detail: string;
+};
