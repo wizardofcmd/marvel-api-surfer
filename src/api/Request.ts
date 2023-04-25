@@ -1,11 +1,10 @@
-import { API_URL } from "../constants/Constants";
-
-const pub_key = import.meta.env.VITE_MARVEL_PUBLIC_KEY;
+const pubKey = import.meta.env.VITE_MARVEL_PUBLIC_KEY;
+const apiUrl = "https://gateway.marvel.com/v1/public/";
 
 export async function fetchResults(category: string, query: string) {
   try {
     const response = await fetch(
-      `${API_URL}${category}?nameStartsWith=${query}&apikey=${pub_key}`
+      `${apiUrl}${category}?nameStartsWith=${query}&apikey=${pubKey}`
     );
     const json = await response.json();
     return json || [];
