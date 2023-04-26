@@ -9,7 +9,10 @@ export default function Results({ results }: ResultsProps) {
     if (filteredResults.length < 1) return null;
 
     return (
-      <div className="grid w-screen" role="main">
+      <div
+        className="inline-grid grid-cols-4 justify-items-center gap-y-4 pt-4"
+        role="main"
+      >
         {filteredResults.map((item) => (
           <ResultCard {...item} />
         ))}

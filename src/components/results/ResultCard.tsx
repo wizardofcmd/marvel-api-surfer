@@ -2,9 +2,13 @@ import { ResultProps } from "../../types/Types";
 
 export function ResultCard({ ...result }: ResultProps) {
   return (
-    <div className="max-h-min w-1/5">
+    <div className="max-h-min w-5/6 rounded-lg shadow">
       <div>
-        <img src={result.image} alt={`Image of ${result.name}`}></img>
+        <img
+          className="rounded-t-lg"
+          src={result.image}
+          alt={`Image of ${result.name}`}
+        ></img>
       </div>
       <div>
         <h2>{result.name}</h2>
