@@ -10,19 +10,21 @@ export function ResultCard({ ...result }: ResultProps) {
           alt={`Image of ${result.name}`}
         ></img>
       </div>
-      <div>
-        <h2>{result.name}</h2>
-      </div>
-      {result.description ? (
+      <div className="p-2">
         <div>
-          <p>{result.description}</p>
+          <h2 className="font-semibold">{result.name}</h2>
         </div>
-      ) : null}
-      {result.detail ? (
-        <a href={result.detail}>
-          <button type="button">Learn more</button>
-        </a>
-      ) : null}
+        {result.description ? (
+          <div>
+            <p>{result.description}</p>
+          </div>
+        ) : null}
+        {result.detail ? (
+          <a href={result.detail}>
+            <button type="button">Learn more</button>
+          </a>
+        ) : null}
+      </div>
     </div>
   );
 }
