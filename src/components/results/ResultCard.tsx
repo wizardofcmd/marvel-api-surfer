@@ -12,7 +12,7 @@ export function ResultCard({ ...result }: ResultProps) {
       </div>
       <div className="p-2">
         <div>
-          <h2 className="font-semibold">{result.name}</h2>
+          <h2 className="text-xl font-semibold md:text-2xl">{result.name}</h2>
         </div>
         {result.description ? (
           <div>
