@@ -2,8 +2,8 @@ import { ResultProps } from "../../types/Types";
 
 export function ResultCard({ ...result }: ResultProps) {
   return (
-    <div className="max-h-min w-5/6 rounded-lg shadow">
-      <div>
+    <div className="h-max w-5/6 rounded-lg shadow">
+      <div className="flex justify-center">
         <img
           className="rounded-t-lg"
           src={result.image}
@@ -21,7 +21,7 @@ export function ResultCard({ ...result }: ResultProps) {
         ) : null}
         {result.detail ? (
           <a className="self-end" href={result.detail}>
-            <button className="bg-blue-700 p-1 px-2 my-2 rounded-md text-white" type="button">
+            <button className="bg-blue-700 p-1 px-2 my-2 font-semibold rounded-md text-white" type="button">
               Learn more
             </button>
           </a>
