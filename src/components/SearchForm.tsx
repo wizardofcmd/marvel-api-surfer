@@ -29,7 +29,7 @@ export default function SearchForm({
           <option value="events">Events</option>
           <option value="creators">Creators</option>
           <option value="series">Series</option>
-          <option value="stories">Stories</option>
+          {/* <option value="stories">Stories</option> */}
         </select>
         <input
           className="h-10 appearance-none border-2 sm:w-[400px] border-slate-200 px-1 focus:outline-none sm:flex-initial sm:border-r-0"
