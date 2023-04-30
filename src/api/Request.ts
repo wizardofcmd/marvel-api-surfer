@@ -13,7 +13,7 @@ export async function fetchResults(category: string, query: string) {
   try {
     const defaultParam = searchParams.get(category);
     const response = await fetch(
-      `${apiUrl}${category}?${defaultParam}=${query}&apikey=${pubKey}`
+      `${apiUrl}${category}?${defaultParam}=${query}&limit=100&apikey=${pubKey}`
     );
     const json = await response.json();
     return json || [];

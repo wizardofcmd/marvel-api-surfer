@@ -2,7 +2,7 @@ import { ResultProps } from "../../types/Types";
 
 export function ResultCard({ ...result }: ResultProps) {
   return (
-    <div className="h-max w-5/6 rounded-lg shadow">
+    <div className="h-max w-5/6 rounded-lg shadow pb-1">
       <div className="flex justify-center">
         <img
           className="rounded-t-lg"
@@ -21,7 +21,7 @@ export function ResultCard({ ...result }: ResultProps) {
         ) : null}
         {result.comicLink ? (
           <a className="self-end" href={result.comicLink}>
-            <button className="bg-blue-700 p-1 px-2 my-2 font-semibold rounded-md text-white" type="button">
+            <button className="bg-blue-700 p-1 px-2 font-semibold rounded-md text-white" type="button">
               Learn more
             </button>
           </a>
