@@ -14,7 +14,7 @@ export default function Results({ results }: ResultsProps) {
         role="main"
       >
         {filteredResults.map((item) => (
-          <ResultCard {...item} />
+          <ResultCard key={item.id} {...item} />
         ))}
       </div>
     );

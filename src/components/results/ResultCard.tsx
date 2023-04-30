@@ -19,8 +19,8 @@ export function ResultCard({ ...result }: ResultProps) {
             <p className="italic">{result.description}</p>
           </div>
         ) : null}
-        {result.detail ? (
-          <a className="self-end" href={result.detail}>
+        {result.comicLink ? (
+          <a className="self-end" href={result.comicLink}>
             <button className="bg-blue-700 p-1 px-2 my-2 font-semibold rounded-md text-white" type="button">
               Learn more
             </button>

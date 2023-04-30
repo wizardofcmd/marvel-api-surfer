@@ -9,15 +9,16 @@ export function filterResults(response: Object) {
   if (results.length < 1) return [];
 
   const filteredResults = results.map(
-    ({ name, description, thumbnail, urls }) => {
-      const detail = urls.find((url) => url.type === "detail")?.url ?? "";
+    ({ id, name, description, thumbnail, urls }) => {
+      const comicLink = urls.find((url) => url.type === "comiclink")?.url ?? "";
       const image = `${thumbnail.path}.jpg`;
 
       return {
+        id,
         name,
         description,
         image,
-        detail,
+        comicLink,
       };
     }
   );

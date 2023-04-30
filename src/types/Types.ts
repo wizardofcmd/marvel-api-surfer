@@ -15,8 +15,9 @@ export type ResultsProps = {
 };
 
 export type ResultProps = {
+  id: number;
   name: string;
   description: string;
   image: string;
-  detail: string;
+  comicLink: string;
 };
