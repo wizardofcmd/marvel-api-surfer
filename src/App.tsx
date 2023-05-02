@@ -4,11 +4,16 @@ import Results from "./components/results/Results";
 
 function App() {
   const [results, setResults] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("characters");
 
   return (
     <>
-      <Banner setResults={setResults} />
-      <Results results={results} />
+      <Banner
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+        setResults={setResults}
+      />
+      <Results category={selectedCategory} results={results} />
     </>
   );
 }

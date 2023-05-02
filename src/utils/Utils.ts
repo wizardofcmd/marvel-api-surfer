@@ -1,24 +1,42 @@
-import { Data, Root } from "../interfaces/Interfaces";
+import { Root } from "../interfaces/Interfaces";
 
-export function filterResults(response: Object) {
-  // Characters: Name, Description (Might be empty), Thumbnail and Marvel link
-  const root = response as Root;
-  const data = root.data as Data;
-  const results = data.results;
+export function filterResults(category: string, response: Object) {
+  // TODO: When no results returned, render error
+  // TODO: Prevent searching same query as before in the same category
+  // TODO: Show tooltip when comics = 0 for Stories
+
+  // Characters: name, description (Might be empty), thumbnail and comiclink
+  // Comics: title, description (Might be empty) OR textObjects, thumbnail and detail
+  // Events: title, description, thumbnail and detail
+  // Creators: fullName, thumbnail and detail
+  // Stories: title, description, detail and comics (show tooltip when 0 to say API is dodgy)
+
+  const results = (response as Root).data.results;
+  // Comics has textObjects
+  // Stories has comics
 
   if (results.length < 1) return [];
 
   const filteredResults = results.map(
-    ({ id, name, description, thumbnail, urls }) => {
-      const comicLink = urls.find((url) => url.type === "comiclink")?.url ?? "";
+    ({ id, thumbnail, description, ...dynamicData }) => {
+      const header =
+        dynamicData?.name || dynamicData.title || dynamicData.fullName;
+      const link =
+        dynamicData?.urls.find(
+          (url) => url.type === "comiclink" || url.type === "detail"
+        )?.url ?? "";
       const image = `${thumbnail.path}.jpg`;
+
+      if (!description && category === "comics") {
+        description = dynamicData.textObject?.text;
+      }
 
       return {
         id,
-        name,
+        header,
         description,
         image,
-        comicLink,
+        link,
       };
     }
   );

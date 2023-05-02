@@ -1,4 +1,6 @@
 export type BannerProps = {
+  selectedCategory: string;
+  setSelectedCategory: React.Dispatch<React.SetStateAction<string>>;
   setResults: React.Dispatch<React.SetStateAction<never[]>>;
 };
 
@@ -11,13 +13,15 @@ export type SearchFormProps = {
 };
 
 export type ResultsProps = {
+  category: string;
   results: string[];
 };
 
 export type ResultProps = {
   id: number;
-  name: string;
-  description: string;
+  header?: string;
+  title?: string;
+  description: string | undefined;
   image: string;
-  comicLink: string;
+  link?: string;
 };

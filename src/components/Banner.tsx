@@ -3,9 +3,8 @@ import { BannerProps } from "../types/Types";
 import SearchForm from "./SearchForm";
 import { fetchResults } from "../api/Request";
 
-export default function Banner({ setResults }: BannerProps) {
+export default function Banner({ selectedCategory, setSelectedCategory, setResults }: BannerProps) {
   const [query, setQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("characters");
 
   function handleUserInput(event: React.ChangeEvent<HTMLInputElement>) {
     const target = event.target.value;
@@ -13,8 +12,8 @@ export default function Banner({ setResults }: BannerProps) {
   }
 
   function handleSelectChange(event: React.ChangeEvent<HTMLSelectElement>) {
-    const category = event.target.value;
-    setSelectedCategory(category);
+    const value = event.target.value;
+    setSelectedCategory(value);
   }
 
   async function handleSearch(event: React.SyntheticEvent) {

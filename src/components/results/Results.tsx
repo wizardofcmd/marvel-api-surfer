@@ -2,9 +2,9 @@ import { ResultsProps } from "../../types/Types";
 import { filterResults } from "../../utils/Utils";
 import { ResultCard } from "./ResultCard";
 
-export default function Results({ results }: ResultsProps) {
+export default function Results({ category, results }: ResultsProps) {
   if (Object.keys(results).length > 0) {
-    const filteredResults = filterResults(results);
+    const filteredResults = filterResults(category, results);
 
     if (filteredResults.length < 1) return null;
 
