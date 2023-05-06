@@ -1,10 +1,19 @@
 import { useState } from "react";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { BannerProps } from "../types/Types";
 import SearchForm from "./SearchForm";
 import { fetchResults } from "../api/Request";
 
-export default function Banner({ selectedCategory, setSelectedCategory, setResults }: BannerProps) {
+export default function Banner({
+  selectedCategory,
+  setSelectedCategory,
+  setResults,
+}: BannerProps) {
   const [query, setQuery] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams({});
+  const location = useLocation();
+
+  console.log(location.search, searchParams);
 
   function handleUserInput(event: React.ChangeEvent<HTMLInputElement>) {
     const target = event.target.value;
@@ -19,6 +28,8 @@ export default function Banner({ selectedCategory, setSelectedCategory, setResul
   async function handleSearch(event: React.SyntheticEvent) {
     event.preventDefault();
     if (!query) return;
+
+    setSearchParams({ category: selectedCategory, query: query });
 
     const results = fetchResults(selectedCategory, query);
     setResults(await results);

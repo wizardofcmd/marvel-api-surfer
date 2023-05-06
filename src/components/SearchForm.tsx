@@ -32,7 +32,7 @@ export default function SearchForm({
           {/* <option value="stories">Stories</option> */}
         </select>
         <input
-          className="h-10 appearance-none border-2 sm:w-[400px] border-slate-200 px-1 focus:outline-none sm:flex-initial sm:border-r-0"
+          className="h-10 appearance-none border-2 border-slate-200 px-1 focus:outline-none sm:w-[400px] sm:flex-initial sm:border-r-0"
           type="search"
           placeholder="Search"
           id="search-input"
