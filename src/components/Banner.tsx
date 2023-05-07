@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { BannerProps } from "../types/Types";
 import SearchForm from "./SearchForm";
 import { fetchResults } from "../api/Request";
@@ -10,7 +10,7 @@ export default function Banner({
   setResults,
 }: BannerProps) {
   const [query, setQuery] = useState("");
-  const [searchParams, setSearchParams] = useSearchParams({});
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,6 +19,9 @@ export default function Banner({
       const query = searchParams.get("query");
 
       if (category && query) {
+        setSelectedCategory(category);
+        setQuery(query);
+
         const results = await fetchResults(category, query);
         setResults(results);
       }

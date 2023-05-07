@@ -2,7 +2,6 @@ import { Root } from "../interfaces/Interfaces";
 
 export function filterResults(category: string, response: Object) {
   // TODO: When no results returned, render error
-  // TODO: react-router: Prevent searching same query as before in the same category
   // TODO: Show tooltip when comics = 0 for Stories
 
   // Characters: name, description (Might be empty), thumbnail and comiclink
@@ -12,7 +11,6 @@ export function filterResults(category: string, response: Object) {
   // Stories: title, description, detail and comics (show tooltip when 0 to say API is dodgy)
 
   const results = (response as Root).data.results;
-  // Stories has comics
 
   if (results.length < 1) return [];
 
