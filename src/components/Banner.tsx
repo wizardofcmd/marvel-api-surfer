@@ -39,6 +39,11 @@ export default function Banner({
 
   async function handleSearch(event: React.SyntheticEvent) {
     event.preventDefault();
+
+    const prevCategory = searchParams.get("category");
+    const prevQuery = searchParams.get("query");
+
+    if (prevCategory === selectedCategory && prevQuery === query) return;
     if (!query) return;
 
     setSearchParams({ category: selectedCategory, query: query });
