@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { BannerProps } from "../types/Types";
 import SearchForm from "./SearchForm";
 import { fetchResults } from "../api/Request";

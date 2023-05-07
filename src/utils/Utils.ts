@@ -3,7 +3,6 @@ import { Root } from "../interfaces/Interfaces";
 export function filterResults(category: string, response: Object) {
   // TODO: When no results returned, render error
   // TODO: react-router: Prevent searching same query as before in the same category
-  // TODO: react-router: Use search params in url as well
   // TODO: Show tooltip when comics = 0 for Stories
 
   // Characters: name, description (Might be empty), thumbnail and comiclink
