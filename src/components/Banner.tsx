@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { BannerProps } from "../types/Types";
 import SearchForm from "./SearchForm";
@@ -11,9 +11,21 @@ export default function Banner({
 }: BannerProps) {
   const [query, setQuery] = useState("");
   const [searchParams, setSearchParams] = useSearchParams({});
-  const location = useLocation();
 
-  console.log(location.search, searchParams);
+  useEffect(() => {
+    const fetchData = async () => {
+      // Get the query parameters from the current URL
+      const category = searchParams.get("category");
+      const query = searchParams.get("query");
+
+      if (category && query) {
+        const results = await fetchResults(category, query);
+        setResults(results);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   function handleUserInput(event: React.ChangeEvent<HTMLInputElement>) {
     const target = event.target.value;
