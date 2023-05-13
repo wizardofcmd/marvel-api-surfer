@@ -58,7 +58,7 @@ export default function Banner({
   return (
     <div className="flex flex-col gap-4 font-sans" role="banner">
       <div className="flex flex-col items-center pt-1">
-        <h1 className="text-center text-5xl font-bold">
+        <h1 className="text-center font-bold max-[239px]:text-xl min-[240px]:text-3xl sm:text-5xl">
           Marvel Comics Search Tool
         </h1>
         <p className="mt-2 text-center text-neutral-500">
