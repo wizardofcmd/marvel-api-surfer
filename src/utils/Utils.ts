@@ -2,7 +2,6 @@ import { Root } from "../interfaces/Interfaces";
 
 export function filterResults(category: string, response: Object) {
   // TODO: Show tooltip when comics = 0 for Stories
-  // TODO: Scroll to top on mobile
 
   // Characters: name, description (Might be empty), thumbnail and comiclink
   // Comics: title, description (Might be empty) OR textObjects, thumbnail and detail
