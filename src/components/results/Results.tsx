@@ -19,7 +19,7 @@ export default function Results({ category, results }: ResultsProps) {
 
     return (
       <div
-        className="inline-grid justify-items-center gap-y-10 py-4 sm:grid-cols-1 md:grid-cols-2 md:gap-y-4 lg:grid-cols-4 lg:gap-y-4"
+        className="relative inline-grid justify-items-center gap-y-10 py-4 sm:grid-cols-1 md:grid-cols-2 md:gap-y-4 lg:grid-cols-4 lg:gap-y-4"
         role="main"
       >
         {filteredResults.map((item) => (
