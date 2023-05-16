@@ -28,6 +28,7 @@ export default function Banner({
     };
 
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function handleUserInput(event: React.ChangeEvent<HTMLInputElement>) {
