@@ -6,7 +6,7 @@ export default function ScrollButton() {
   };
 
   return (
-    <div className="fixed bottom-1 left-1 sm:hidden" onClick={scrollToTop}>
+    <div className="fixed bottom-1 right-0.5 sm:hidden" onClick={scrollToTop}>
       <img
         className="h-[40px] w-[40px] opacity-25 active:opacity-100"
         src={ScrollToTopIcon}

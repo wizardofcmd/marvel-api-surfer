@@ -1,14 +1,6 @@
 import { Root } from "../interfaces/Interfaces";
 
 export function filterResults(category: string, response: Object) {
-  // TODO: Show tooltip when comics = 0 for Stories
-
-  // Characters: name, description (Might be empty), thumbnail and comiclink
-  // Comics: title, description (Might be empty) OR textObjects, thumbnail and detail
-  // Events: title, description, thumbnail and detail
-  // Creators: fullName, thumbnail and detail
-  // Stories: title, description, detail and comics (show tooltip when 0 to say API is dodgy)
-
   const results = (response as Root).data.results;
 
   if (results.length < 1) return [];
