@@ -1,6 +1,6 @@
 import { Root } from "../interfaces/Interfaces";
 
-export function filterResults(category: string, response: object) {
+export function filterResults(category: string, response: Object) {
   const results = (response as Root).data.results;
 
   if (results.length < 1) return [];

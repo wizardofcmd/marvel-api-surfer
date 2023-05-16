@@ -6,8 +6,8 @@ import { fetchResults } from "../api/Request";
 
 export default function Banner({
   selectedCategory,
+  setSelectedCategory,
   setResults,
-  memoizedSetCategory,
 }: BannerProps) {
   const [query, setQuery] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
@@ -19,7 +19,7 @@ export default function Banner({
       const query = searchParams.get("query");
 
       if (category && query) {
-        memoizedSetCategory(category);
+        setSelectedCategory(category);
         setQuery(query);
 
         const results = await fetchResults(category, query);
@@ -28,7 +28,7 @@ export default function Banner({
     };
 
     fetchData();
-  }, [searchParams, setResults, memoizedSetCategory]);
+  }, []);
 
   function handleUserInput(event: React.ChangeEvent<HTMLInputElement>) {
     const target = event.target.value;
@@ -37,7 +37,7 @@ export default function Banner({
 
   function handleSelectChange(event: React.ChangeEvent<HTMLSelectElement>) {
     const value = event.target.value;
-    memoizedSetCategory(value);
+    setSelectedCategory(value);
   }
 
   async function handleSearch(event: React.SyntheticEvent) {
