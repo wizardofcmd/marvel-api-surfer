@@ -1,7 +1,7 @@
 export type BannerProps = {
   selectedCategory: string;
+  setSelectedCategory: React.Dispatch<React.SetStateAction<string>>;
   setResults: React.Dispatch<React.SetStateAction<never[]>>;
-  memoizedSetCategory: (category: string) => void;
 };
 
 export type SearchFormProps = {
